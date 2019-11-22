@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+            <script language="javascript">
+            var ctuapp_share_img="www.baidu.com";
+            
+            function getUserAgent() {
+                var ug = navigator.userAgent;
+                document.getElementById("mySpan").innerHTML = ug;
+            }
+            
+            function setTitle() {
+                window.ruitaiApp.setTitle("测试标题");
+            }
+            function setRightTitle(){
+                window.ruitaiApp.setRightTitle({showRightTitle:'0',rightTitle:'测试右侧数据',title:'测试分享的标题',desc:'分享描述',link:'分析链接',imgUrl:'分享图片链接'})
+            }
+            function setLeftTitle(){
+                window.webkit.messageHandlers.setLeftTitle.postMessage({showLeftTitle:'0',method:'测试方法'})
+            }
+            function jumpLogin(){
+                window.ruitaiApp.jumpLogin(function (msg) {
+                    alert(msg);
+                })
+            }
+            function jumpLoginResult(str){
+                asyncAlert(str);
+                document.getElementById("returnValue").value = str;
+            }
+            
+            function asyncAlert(content) {
+                setTimeout(function(){
+                           alert(content);
+                           },1);
+            }
+            
+            </script>
+            </head>
+    
+    <body>
+        <h1>这是按钮调用</h1>
+        <p><span style="font-size:30px" id="mySpan">..</span></p>
+        <input type="button" value="点击显示 user-agent" onclick="getUserAgent()" />
+        <input type="button" value="setTitle(title)" onclick="setTitle()" />
+        <input type="button" value="setRightTitle(rightTitleData)" onclick="setRightTitle()" />
+        <input type="button" value="setLeftTitle(leftTitleData)" onclick="setLeftTitle()" />
+        <input type="button" value="jumpLogin(callBack)" onclick="jumpLogin()" />
+
+        <h1>这是回调结果展示区</h1>
+        <textarea id ="returnValue" type="value" rows="5" cols="40">
+        
+        </textarea>
+
+
+        
+    </body>
+</html>

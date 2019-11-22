@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="BaseTitleBar">
+        <attr name="titleText" format="string" />
+        <attr name="rightText" format="string" />
+        <attr name="backView" format="reference" />
+        <attr name="showRightView" format="boolean" />
+        <attr name="showBackView" format="boolean" />
+        <attr name="backgroundColor" format="reference|color" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="titleTextSize" format="float" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightTextSize" format="float" />
+        <attr name="showRightViewBackgroud" format="boolean" />
+        <attr name="rightTextDrawaleTop" format="reference" />
+        <attr name="titleTheme" format="enum">
+            <enum name="white" value="2" />
+            <enum name="red" value="1" />
+            <enum name="custom" value="0" />
+        </attr>
+        <attr name="rightImageSrc" format="reference" />
+
+    </declare-styleable>
+
+</resources>

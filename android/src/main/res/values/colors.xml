@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="trans_black">#20000000</color>
+    <color name="red">#e6350d</color>
+    <color name="pink">#ff0055</color>
+    <color name="orange">#FA630F</color>
+    <color name="home_text_gray">#9E9E9E</color>
+    <color name="text_gray">#676767</color>
+    <color name="divider_dark_gray">#E5e3e3</color>
+    <color name="light_gray">#9BA3B5</color>
+    <color name="text_black">#101010</color>
+    <color name="text_light_gray">#BBBBBB</color>
+    <color name="green_dark">#D3F4D3</color>
+    <color name="green_light">#DCFCDC</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="black_22">#ff222222</color>
+    <color name="color_696969">#ff696969</color>
+    <color name="color_">#00B800</color>
+
+    <color name="blue_00aaee">#00aaee</color>
+    <color name="gray_ccc">#cccccc</color>
+    <color name="gray_F6">#f6f6f6</color>
+    <color name="gray_E0">#e0e0e0</color>
+    <color name="A8772F">#A8772F</color>
+    <color name="status_color_alpha">#22000000</color>
+
+    <color name="D72902">#D72902</color>
+    <color name="EF4912">#EF4912</color>
+    <color name="E5E3E3">#ffe5e3e3</color>
+    <color name="color_E0A902">#ffE0A902</color>
+    <color name="recyclerBackground">#fffbfbfb</color>
+    <color name="color_AAAAAA">#ffaaaaaa</color>
+
+    <color name="blue_7BAEC8">#7BAEC8</color>
+
+    <color name="gray_E5">#E5E5E5</color>
+    <color name="gray_D2">#D2D2D2</color>
+
+    <color name="blue_2780C1">#2780C1</color>
+    <color name="blue_0AB3C3">#0AB3C3</color>
+    <color name="blue_0BCAAE">#0BCAAE</color>
+    <color name="blue_69D169">#69D169</color>
+
+    <color name="blue_378FD0">#378FD0</color>
+
+    <color name="orange_E2664A">#E2664A</color>
+    <color name="green_32B16C">#32B16C</color>
+
+    <color name="color_E4674A">#33E4674A</color>
+    <color name="color_89C997">#3389C997</color>
+    <color name="color_7DC8E7">#337DC8E7</color>
+    <color name="color_8987D0">#338987D0</color>
+
+    <color name="color_77B483">#77B483</color>
+    <color name="color_62AFCF">#62AFCF</color>
+    <color name="color_8A88CF">#8A88CF</color>
+
+
+    <!--背景色-->
+    <color name="background">#eeeeee</color>
+    <!--背景色、行间分割线-->
+    <color name="divider_gray">#efefef</color>
+    <!--选择按钮背景色-->
+    <color name="button_gray">#F5F5F5</color>
+    <!--内容快背景色-->
+    <color name="block_gray">#FbFbFb</color>
+    <!--行间分割线（强调分割线效果）-->
+    <color name="divider_grays">#FbFbFb</color>
+    <!-- 人保红 -->
+    <color name="paleRed">#E6350D</color>
+    <!--点击（引导点击按钮）-->
+    <color name="transparent_paleRed">#90E6350D</color>
+    <!--失效（引导点击按钮）-->
+    <color name="Invalidt_button">#dddddd</color>
+    <!--失效（引导点击按钮）-->
+    <color name="gray_button">#f2f2f2</color>
+    <!--文字颜色-->
+    <color name="text_white">#FFFFFF</color>
+    <!--悬浮按钮字体颜色-->
+    <color name="suspension_testColors">#444444</color>
+    <!--悬浮按钮失效字体颜色-->
+    <color name="suspension_invalid_testColors">#999999</color>
+    <!--内容字段标签-->
+    <color name="contentColors">#666666</color>
+    <!--标签颜色-->
+    <color name="labelColors">#444444</color>
+
+    <color name="title_black">#222222</color>
+    <!--range_date_picker-->
+
+    <color name="dividerColor">#e0e0e0</color>
+    <color name="calendar_active_month_bg">#ffffff</color>
+    <color name="calendar_bg">#ffffff</color>
+    <color name="calendar_divider">#f5f5f5</color>
+    <color name="calendar_inactive_month_bg">#ffffff</color>
+    <color name="calendar_selected_day_bg">#E6350D</color>
+    <color name="calendar_highlighted_day_bg">#ffcf40</color>
+    <color name="calendar_selected_range_bg">#E6350D</color>
+    <color name="calendar_unavailable_bg">#E6350D</color>
+    <color name="calendar_range_middle_unavailable_bg">#E6350D</color>
+    <color name="calendar_range_middle_deactivated_bg">#e0e0e0</color>
+
+
+    <color name="calendar_text_inactive">#ffffff</color>
+    <color name="calendar_text_active">#212121</color>
+    <color name="calendar_text_selected">#ffffff</color>
+    <color name="calendar_text_unselected">#7ffefeff</color>
+    <color name="calendar_text_highlighted">#f5f5f5</color>
+
+    <color name="dateTimeRangePickerStateDefault">@android:color/black</color>
+    <color name="dateTimeRangePickerStateNonSelectable">@android:color/white</color>
+    <color name="dateTimeRangePickerStateToday">#ffcf40</color>
+    <color name="dateTimeRangePickerHeaderTextColor">@android:color/black</color>
+    <color name="dateTimeRangePickerTitleTextColor">@android:color/black</color>
+    <color name="dateTimeRangePickerRangeTextColorActive">@android:color/white</color>
+    <color name="dateTimeRangePickerRangeTextColorInactive">#B9B9B9</color>
+    <!--range_date_picker-->
+
+
+    <!--环形图颜色-->
+    <color name="chart_EB6100">#EB6100</color>
+    <color name="chart_F9A53E">#F9A53E</color>
+    <color name="chart_FCD340">#FCD340</color>
+    <color name="chart_2CC0AA">#2CC0AA</color>
+    <color name="chart_3197D8">#3197D8</color>
+    <color name="chart_195079">#195079</color>
+
+
+</resources>
