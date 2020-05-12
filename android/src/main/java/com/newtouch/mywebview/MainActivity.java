@@ -221,6 +221,22 @@ public class MainActivity extends AppCompatActivity implements BaseTitleBar.onLe
                 e.printStackTrace();
             }
         }
+
+        /**
+         * 跳转rn页面
+         */
+        public static void jumpToRn(WebView webView, JSONObject msg) {
+            WritableMap params = Arguments.createMap();
+            sendEvent(RNReactNativeMywebviewModule.reactContext, "jumpToRn", msg);
+            TaskExecutor.scheduleTaskOnUiThread(2000, new Runnable() {
+                @Override
+                public void run() {
+                    WebViewActivity.webViewActivity.finish();
+
+                }
+            });
+        }
+
         public static void jumpShare(WebView webView, JSONObject msg){
             if (msg != null) {
                 WritableMap params = Arguments.createMap();
@@ -247,6 +263,10 @@ public class MainActivity extends AppCompatActivity implements BaseTitleBar.onLe
         }
 
         public static void sendEvent(ReactContext reactContext, String eventName, WritableMap params) {
+            reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
+        }
+
+        public static void sendEvent(ReactContext reactContext, String eventName, JSONObject params) {
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
         }
 
