@@ -2,17 +2,21 @@
 package com.newtouch.mywebview;
 
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RNReactNativeMywebviewModule extends ReactContextBaseJavaModule {
 
   public static ReactApplicationContext reactContext;
   private static final String ERROR_CODE = RNReactNativeMywebviewModule.class.getName();
-
+  public static List<AppCompatActivity> activityMage = new ArrayList();
   public RNReactNativeMywebviewModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
@@ -36,6 +40,10 @@ public class RNReactNativeMywebviewModule extends ReactContextBaseJavaModule {
     getCurrentActivity().startActivity(intent);
   }
 
-
-
+  @ReactMethod
+  public void destroyByWebview(ReadableMap options) {
+    if (activityMage.size() > 0) {
+      activityMage.get(0).finish();
+    }
+  }
 }

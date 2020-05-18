@@ -227,14 +227,14 @@ public class MainActivity extends AppCompatActivity implements BaseTitleBar.onLe
          */
         public static void jumpToRn(WebView webView, JSONObject msg) {
             WritableMap params = Arguments.createMap();
-            sendEvent(RNReactNativeMywebviewModule.reactContext, "jumpToRn", msg);
-            TaskExecutor.scheduleTaskOnUiThread(2000, new Runnable() {
-                @Override
-                public void run() {
-                    WebViewActivity.webViewActivity.finish();
+            sendEvent(RNReactNativeMywebviewModule.reactContext, "jumpToRn", msg.toString());
+            //TaskExecutor.scheduleTaskOnUiThread(2000, new Runnable() {
+            //    @Override
+            //    public void run() {
+            //        WebViewActivity.webViewActivity.finish();
 
-                }
-            });
+            //    }
+            //});
         }
 
         public static void jumpShare(WebView webView, JSONObject msg){
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity implements BaseTitleBar.onLe
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
         }
 
-        public static void sendEvent(ReactContext reactContext, String eventName, JSONObject params) {
+        public static void sendEvent(ReactContext reactContext, String eventName, String params) {
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
         }
 

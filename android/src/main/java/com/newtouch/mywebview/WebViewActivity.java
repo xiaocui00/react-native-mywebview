@@ -58,6 +58,7 @@ public class WebViewActivity extends AppCompatActivity implements BaseTitleBar.o
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        RNReactNativeMywebviewModule.activityMage.add(this);
         Window window = this.getWindow();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             setTranslucentStatus(true, this);
@@ -238,14 +239,14 @@ public class WebViewActivity extends AppCompatActivity implements BaseTitleBar.o
          */
         public static void jumpToRn(WebView webView, JSONObject msg) {
             WritableMap params = Arguments.createMap();
-            sendEvent(RNReactNativeMywebviewModule.reactContext, "jumpToRn", msg);
-            TaskExecutor.scheduleTaskOnUiThread(2000, new Runnable() {
-                @Override
-                public void run() {
-                    WebViewActivity.webViewActivity.finish();
+            sendEvent(RNReactNativeMywebviewModule.reactContext, "jumpToRn", msg.toString());
+            //TaskExecutor.scheduleTaskOnUiThread(2000, new Runnable() {
+            //    @Override
+            //    public void run() {
+            //        WebViewActivity.webViewActivity.finish();
 
-                }
-            });
+            //    }
+            //});
         }
 
         public static void jumpShare(WebView webView, JSONObject msg){
@@ -276,7 +277,7 @@ public class WebViewActivity extends AppCompatActivity implements BaseTitleBar.o
         public static void sendEvent(ReactContext reactContext, String eventName, WritableMap params) {
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
         }
-        public static void sendEvent(ReactContext reactContext, String eventName, JSONObject params) {
+        public static void sendEvent(ReactContext reactContext, String eventName, String params) {
             reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, params);
         }
 
