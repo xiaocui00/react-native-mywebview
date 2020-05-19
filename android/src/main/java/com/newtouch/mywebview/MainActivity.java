@@ -16,6 +16,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -226,7 +227,6 @@ public class MainActivity extends AppCompatActivity implements BaseTitleBar.onLe
          * 跳转rn页面
          */
         public static void jumpToRn(WebView webView, JSONObject msg) {
-            WritableMap params = Arguments.createMap();
             sendEvent(RNReactNativeMywebviewModule.reactContext, "jumpToRn", msg.toString());
             //TaskExecutor.scheduleTaskOnUiThread(2000, new Runnable() {
             //    @Override
@@ -396,5 +396,16 @@ public class MainActivity extends AppCompatActivity implements BaseTitleBar.onLe
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (coreWebView.canGoBack()) {
+                coreWebView.loadUrl("javascript:backHistory()");
+            } else {
+                finish();
+            }
+        }
+        return false;
     }
 }

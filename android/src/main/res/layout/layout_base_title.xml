@@ -40,6 +40,7 @@
             android:layout_width="45dp"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:id="@+id/rex"
             app:layout_constraintLeft_toRightOf="@+id/a">
 
             <ImageView

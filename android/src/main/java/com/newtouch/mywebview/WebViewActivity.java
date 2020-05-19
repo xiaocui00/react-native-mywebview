@@ -17,6 +17,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -58,7 +59,6 @@ public class WebViewActivity extends AppCompatActivity implements BaseTitleBar.o
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RNReactNativeMywebviewModule.activityMage.add(this);
         Window window = this.getWindow();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             setTranslucentStatus(true, this);
@@ -424,5 +424,17 @@ public class WebViewActivity extends AppCompatActivity implements BaseTitleBar.o
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (coreWebView.canGoBack()) {
+                coreWebView.loadUrl("javascript:backHistory()");
+            } else {
+                finish();
+            }
+        }
+        return false;
     }
 }

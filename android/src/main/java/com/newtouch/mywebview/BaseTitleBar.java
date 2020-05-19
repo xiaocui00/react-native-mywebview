@@ -23,9 +23,11 @@ public class BaseTitleBar extends Toolbar implements View.OnClickListener {
     private View vStatusBar;
     private TextView mTitleTv;
     private ImageView mFinish;
+    private LinearLayout rex;
     private TextView mRightTv;
     private LinearLayout mTitleBarBackground;
     private ImageView mBackImageView;
+    private LinearLayout a;
     private ImageView mRightImage;
 
     private onRightTextViewClickListener onRightTextViewClickListener;
@@ -59,9 +61,13 @@ public class BaseTitleBar extends Toolbar implements View.OnClickListener {
         vStatusBar.setLayoutParams(layoutParamsBar);
 
         mBackImageView = findViewById(R.id.mBackImageView);
+        a = findViewById(R.id.a);
         mFinish = findViewById(R.id.mFinish);
-        mBackImageView.setOnClickListener(this);
-        mFinish.setOnClickListener(this);
+        rex = findViewById(R.id.rex);
+//        mBackImageView.setOnClickListener(this);
+        a.setOnClickListener(this);
+//        mFinish.setOnClickListener(this);
+        rex.setOnClickListener(this);
 
         mTitleTv = findViewById(R.id.mTitleTv);
         mTitleTv.setOnClickListener(this);
@@ -238,9 +244,9 @@ public class BaseTitleBar extends Toolbar implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.mBackImageView && onLeftBackClickListener != null) {
+        if (v.getId() == R.id.a && onLeftBackClickListener != null) {
             onLeftBackClickListener.onBackClickListener(v);
-        } else if (v.getId() == R.id.mFinish && onLeftFinishClickListener != null){
+        } else if (v.getId() == R.id.rex && onLeftFinishClickListener != null){
             onLeftFinishClickListener.onFinishClickListener(v);
         } else if (v.getId() == R.id.mRightTv && onRightTextViewClickListener != null){
             onRightTextViewClickListener.onTextViewClickListener(v);

@@ -16,7 +16,6 @@ public class RNReactNativeMywebviewModule extends ReactContextBaseJavaModule {
 
   public static ReactApplicationContext reactContext;
   private static final String ERROR_CODE = RNReactNativeMywebviewModule.class.getName();
-  public static List<AppCompatActivity> activityMage = new ArrayList();
   public RNReactNativeMywebviewModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
@@ -42,8 +41,12 @@ public class RNReactNativeMywebviewModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void destroyByWebview(ReadableMap options) {
-    if (activityMage.size() > 0) {
-      activityMage.get(0).finish();
+    try {
+      if (WebViewActivity.webViewActivity != null) {
+        WebViewActivity.webViewActivity.finish();
+      }
+    }catch (Exception e){
+      e.printStackTrace();
     }
   }
 }
