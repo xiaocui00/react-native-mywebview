@@ -429,10 +429,23 @@ public class WebViewActivity extends AppCompatActivity implements BaseTitleBar.o
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (coreWebView.canGoBack()) {
-                coreWebView.loadUrl("javascript:backHistory()");
-            } else {
-                finish();
+
+            try {
+                if (leftMsg != null && !TextUtils.isEmpty(leftMsg.getString("method"))) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                coreWebView.loadUrl("javascript:" + leftMsg.getString("method") + "()");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
         return false;
